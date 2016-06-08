@@ -1,14 +1,14 @@
 class skeleton {
 
   file { '/etc/skel':
-    ennsure => directory,
+    ensure => directory,
     owner   => 'root',
     group   => 'root',
     mode    => '0755'
   }
   
   file { '/etc/skel/.bashrc':
-    ennsure => file,
+    ensure => file,
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
