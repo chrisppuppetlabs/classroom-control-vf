@@ -38,7 +38,7 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-node default {
+#node default {
 
   #include users
   #include skeleton
@@ -61,9 +61,9 @@ node default {
   #  creates => '/etc/motd'
   #}
   
-  host { 'testing.puppetlabs.vm':
-    ensure  => present,
-    ip      => '127.0.0.1',
-    comment  => 'Just testing...'
-  }
-}
+  #host { 'testing.puppetlabs.vm':
+  #  ensure  => present,
+  #  ip      => '127.0.0.1',
+  #  comment  => 'Just testing...'
+  #}
+#}
