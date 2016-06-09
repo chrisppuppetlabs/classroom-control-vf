@@ -68,7 +68,7 @@ node default {
   #}
   
   if $::is_virtual {
-    #$myVirtual = capitalize($::virtual)
-    notify {"This is running on ${capitalize(::virtual)}":}
+    $myVirtual = capitalize($::virtual)
+    notify {"This is running on ${myVirtual}":}
   }
 }
