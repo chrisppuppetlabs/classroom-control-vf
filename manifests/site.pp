@@ -67,12 +67,16 @@ node default {
   #  comment  => 'Just testing...'
   #}
   
-  if $::is_virtual {
-    $myVirtual = capitalize($::virtual)
-    notify {"This is running on ${myVirtual}":}
-  }
+  #if $::is_virtual {
+  #  $myVirtual = capitalize($::virtual)
+  #  notify {"This is running on ${myVirtual}":}
+  #}
   
-  $message = hiera('message')
-  notify { $message: }
+  #$message = hiera('message')
+  #notify { $message: }
+  
+  class { 'nginx':
+    docroot = '/var/www/custom'
+  }
   
 }
