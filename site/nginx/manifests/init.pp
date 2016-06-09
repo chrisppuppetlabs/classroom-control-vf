@@ -38,7 +38,7 @@ class nginx {
     ensure  => present,
   }
   
-  file { [$docroot, '${confdir}/conf.d']:
+  file { [$docroot, "${confdir}/conf.d"]:
     ensure  => directory,
   }
   
@@ -47,14 +47,14 @@ class nginx {
     source  => 'puppet:///modules/nginx/index.html'
   }
   
-  file { '${confdir}/nginx.conf':
+  file { "${confdir}/nginx.conf":
     ensure  => file,
     source  => 'puppet:///modules/nginx/nginx.conf',
     require => Package[$package],
     notify  => Service['nginx']
   }
   
-  file { '${confdir}/conf.d/default.conf':
+  file { "${confdir}/conf.d/default.conf":
     ensure  => file,
     source  => 'puppet:///modules/nginx/default.conf',
     require => Package[$package],
