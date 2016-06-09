@@ -71,4 +71,8 @@ node default {
     $myVirtual = capitalize($::virtual)
     notify {"This is running on ${myVirtual}":}
   }
+  
+  $message = hiera('message')
+  notify { $message: }
+  
 }
