@@ -22,7 +22,7 @@ class nginx {
     }
   }
   
-  $user = ${::osfamily} ? {
+  $user = $::osfamily ? {
     'redhat'  => 'nginx',
     'debian'  => 'www-data',
     'windows' => 'nobody'
