@@ -67,7 +67,7 @@ node default {
   #  comment  => 'Just testing...'
   #}
   
-  if $::virtual != 'physical' {
+  if $::is_virtual {
     $myVirtual = capitalize($::virtual)
     notify {"This is running on ${myVirtual}":}
   }
