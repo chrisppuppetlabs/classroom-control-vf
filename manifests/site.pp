@@ -76,7 +76,7 @@ node default {
   #notify { $message: }
   
   class { 'nginx':
-    docroot = '/var/www/custom'
+    docroot => '/var/www/custom'
   }
   
 }
