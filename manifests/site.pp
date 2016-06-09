@@ -38,7 +38,7 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-#node default {
+node default {
 
   #include users
   #include skeleton
@@ -66,4 +66,9 @@ ini_setting { 'random ordering':
   #  ip      => '127.0.0.1',
   #  comment  => 'Just testing...'
   #}
-#}
+  
+  if $::virtual != 'physical' {
+    $myVirtual = capitalize($::virtual)
+    notify {"This is running on ${myVirtual}":}
+  }
+}
