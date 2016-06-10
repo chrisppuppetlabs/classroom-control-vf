@@ -1,4 +1,4 @@
-class nginx::vhost (
+define nginx::vhost (
   $port         = '80',
   $servername   = $title,
   $docroot      = "${nginx::docroot}/vhost/${title}"
