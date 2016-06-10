@@ -14,10 +14,7 @@ define nginx::vhost (
     ip  => $::upaddress,
   }
   
-  package { $nginx::package:
-    ensure  => present,
-  }
-  
+
   file { "${docroot}/index.html":
     ensure  => file,
     content  => template('nginx/index.html.erb')
@@ -27,7 +24,6 @@ define nginx::vhost (
     ensure  => file,
     path    => "${nginx::confdir}/conf.d/${title}.conf",
     content => template('nginx/vhost.conf.erb'),
-    require => Package[$package],
     notify  => Service['nginx']
   }
   
