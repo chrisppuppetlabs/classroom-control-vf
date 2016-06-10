@@ -38,7 +38,7 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-#node default {
+node default {
 
   #include users
   #include skeleton
@@ -75,6 +75,8 @@ ini_setting { 'random ordering':
   #$message = hiera('message')
   #notify { $message: }
   
-  #class { 'nginx':}
+  include nginx
+  nginx::vhost { 'prod.puppetlabs.vm': }
+  nginx::vhost { 'dev.puppetlabs.vm' : } 
   
-#}
+}
