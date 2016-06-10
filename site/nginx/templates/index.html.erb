@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Master of Puppets</title>
+  </head>
+  <body>
+    <h1>Laughing at my Cries</h1>
+    <% if @servername -%>
+      <h3>Welcome to the <%= @servername %> virtual host.</h3>
+    <% else -%>
+      <h2>Welcome to <%= @fqdn %>.</h2>
+    <% end -%>
+    <p>My IP Address is: <%= @ipaddress %></p>
+    <p>My uptime is <%= @uptime_seconds %> seconds.</p>
+    <p>This is a <%= @osfamily %> system.</p>
+  </body>
+</html>
+
