@@ -31,10 +31,5 @@ define nginx::vhost (
     ensure => directory,
     before => File["nginx-vhost-${title}"]
   }
-  
-  service { 'nginx':
-    ensure  => running,
-    enable  => true
-  }
 
 }
