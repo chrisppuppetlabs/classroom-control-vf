@@ -1,8 +1,8 @@
  server {
-    listen 80;
+    listen <%= @port %>;
 
     root <%= @docroot %>;
     index index.html index.htm;
 
-    server_name _;
+    server_name <%= @servername %>;
 }
